@@ -127,7 +127,7 @@ public class RegistryServerSync implements InitializingBean, DisposableBean, Not
                     services = new HashMap<>();
                     categories.put(category, services);
                 }
-                String service = url.getServiceKey();
+                String service = url.getServiceKey() + "::" + url.getParameter(Constants.GROUP_KEY);
                 Map<String, URL> ids = services.get(service);
                 if (ids == null) {
                     ids = new HashMap<>();

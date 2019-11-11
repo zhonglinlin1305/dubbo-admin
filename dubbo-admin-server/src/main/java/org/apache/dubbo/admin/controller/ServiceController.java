@@ -82,9 +82,9 @@ public class ServiceController {
         String group = Tool.getGroup(service);
         String version = Tool.getVersion(service);
         String interfaze = Tool.getInterface(service);
-        List<Provider> providers = providerService.findByService(service);
+        List<Provider> providers = providerService.findByService(service+"::"+group);
 
-        List<Consumer> consumers = consumerService.findByService(service);
+        List<Consumer> consumers = consumerService.findByService(service+"::"+group);
 
         String application = null;
         if (providers != null && providers.size() > 0) {
